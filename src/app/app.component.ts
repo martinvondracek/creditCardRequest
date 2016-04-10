@@ -5,6 +5,8 @@ import {Component} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 
 import {Home} from './home';
+import {HeaderComponent} from './header/header';
+
 import {AppState} from './app.service';
 import {RouterActive} from './router-active';
 
@@ -16,20 +18,25 @@ import {RouterActive} from './router-active';
   selector: 'app',
   pipes: [ ],
   providers: [ ],
-  directives: [ RouterActive ],
-  styles: [ ],
+  directives: [
+    RouterActive,
+    HeaderComponent
+  ],
+  styles: [ require('./app.scss').toString() ],
   template: `
-    <header>
-      <nav>
-      </nav>
-    </header>
+    <div class="main-content">
+      <header>
+        <header-component></header-component>
+      </header>
 
-    <main>
-      <router-outlet></router-outlet>
-    </main>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
 
-    <footer>
-    </footer>
+      <footer>
+        &copy; 2016 Martin Vondracek
+      </footer>
+    </div>
   `
 })
 @RouteConfig([

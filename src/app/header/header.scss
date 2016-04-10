@@ -1,0 +1,16 @@
+.header-component {
+  nav {
+    background-color: lightgray;
+
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: black;
+    }
+    a:hover {
+      cursor: pointer;
+    }
+  }
+}
