@@ -111,7 +111,13 @@ module.exports = {
       // Returns file content as string
       //
       // See: https://github.com/webpack/raw-loader
-      {test: /\.css$/, loader: 'raw-loader', exclude: [helpers.root('src/index.html')]}
+      {test: /\.css$/, loader: 'raw-loader', exclude: [helpers.root('src/index.html')]},
+
+      {test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=100000" },
+
+      // bootstrap
+      { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
+      {test: /icomoon/, loader: "url-loader?limit=100000" }
 
     ],
 
