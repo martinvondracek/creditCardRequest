@@ -17,16 +17,6 @@ export class PersonalDetails implements OnInit {
   myForm: ControlGroup;
   firstName: AbstractControl;
 
-  phoneValidator(control: Control) {
-    if (!control.value) {
-      return {invalidPhone: false};
-    }
-
-    if (!control.value.match(/^\+421/)) {
-      return {invalidPhone: true};
-    }
-  }
-
   constructor(
     private router: Router,
     private newRequestService: NewRequestService,
@@ -35,7 +25,10 @@ export class PersonalDetails implements OnInit {
     this.myForm = fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', Validators.compose([
+        Validators.required,
+        this.emailValidator
+      ])],
       phone: ['', Validators.compose([
         Validators.required,
         this.phoneValidator
@@ -49,6 +42,26 @@ export class PersonalDetails implements OnInit {
     // we need status at least 1, otherwise we navigate to first step
     if (this.model.status < 1) {
       this.router.navigate( ['CardTypes']);
+    }
+  }
+
+  phoneValidator(control: Control) {
+    if (!control.value) {
+      return {invalidPhone: false};
+    }
+
+    if (!control.value.match(/^[+]{0,1}[\d\s]{6,15}$/)) {
+      return {invalidPhone: true};
+    }
+  }
+
+  emailValidator(control: Control) {
+    if (!control.value) {
+      return {invalidPhone: false};
+    }
+
+    if (!control.value.match(/^[\w\.]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
+      return {invalidPhone: true};
     }
   }
 

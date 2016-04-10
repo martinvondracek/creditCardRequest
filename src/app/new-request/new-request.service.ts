@@ -25,6 +25,7 @@ export class NewRequestService {
     // TODO change to http
 
     console.log('data sent', model);
+    this.model = new RequestModelImpl();
 
     return Promise.resolve(true);
   }
