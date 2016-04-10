@@ -4,8 +4,10 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 
+import {HeaderComponent} from './header';
 import {Home} from './home';
-import {HeaderComponent} from './header/header';
+import {NewRequetComponent} from './new-request';
+import {About} from './about';
 
 import {AppState} from './app.service';
 import {RouterActive} from './router-active';
@@ -40,7 +42,9 @@ import {RouterActive} from './router-active';
   `
 })
 @RouteConfig([
-  { path: '/',      name: 'Home', component: Home, useAsDefault: true }
+  { path: '/', name: 'Home', component: Home, useAsDefault: true },
+  { path: '/new-request/...', name: 'NewRequest', component: NewRequetComponent },
+  { path: '/about', name: 'About', component: About }
 ])
 export class App {
 
