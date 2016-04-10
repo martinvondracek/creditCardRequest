@@ -13,5 +13,12 @@ npm install
 npm start <br>
 and go to http://localhost:3000/
 
+# tests
+npm run test
+
 # build
 npm run build:prod
+
+# live example
+
+[http://martin91.wz.cz/](http://martin91.wz.cz/)
