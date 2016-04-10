@@ -2,6 +2,16 @@
   nav {
     background-color: lightgray;
 
+    .nav-item {
+      &.router-link-active {
+        background-color: #F6F6F6;
+      }
+
+      &:hover {
+        background-color: #F6F6F6;
+      }
+    }
+
     a,
     a:link,
     a:visited,

@@ -38,7 +38,7 @@ import {RouterActive} from './router-active';
       </main>
 
       <footer>
-        &copy; 2016 Martin Vondracek
+        2016 Martin Vondracek
       </footer>
     </div>
   `
