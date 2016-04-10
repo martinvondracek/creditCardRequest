@@ -13,7 +13,4 @@ export class Home implements OnInit {
   ngOnInit() {
   }
 
-  submitState(value) {
-  }
-
 }

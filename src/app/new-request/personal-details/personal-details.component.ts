@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {Router} from 'angular2/router'
+import {Router} from 'angular2/router';
 import {FORM_DIRECTIVES, FormBuilder, ControlGroup, Validators,
   AbstractControl, Control} from 'angular2/common';
 
