@@ -9,7 +9,7 @@ import {Home} from './home';
 import {NewRequetComponent} from './new-request';
 import {About} from './about';
 
-import {AppState} from './app.service';
+import {NewRequestService} from './new-request/new-request.service';
 import {RouterActive} from './router-active';
 
 /*
@@ -19,7 +19,9 @@ import {RouterActive} from './router-active';
 @Component({
   selector: 'app',
   pipes: [ ],
-  providers: [ ],
+  providers: [
+    NewRequestService
+  ],
   directives: [
     RouterActive,
     HeaderComponent
@@ -48,7 +50,7 @@ import {RouterActive} from './router-active';
 ])
 export class App {
 
-  constructor(public appState: AppState) {}
+  constructor() {}
 
   ngOnInit() {
   }

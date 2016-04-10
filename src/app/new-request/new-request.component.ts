@@ -5,6 +5,8 @@ import {CardTypes} from './card-types';
 import {Confirmation} from './confirmation';
 import {PersonalDetails} from './personal-details';
 
+import {NewRequestService} from './new-request.service';
+
 @Component({
   template: `
     <router-outlet></router-outlet>
@@ -14,15 +16,17 @@ import {PersonalDetails} from './personal-details';
 
 @RouteConfig([
   { path: '/cardTypes', name: 'CardTypes', component: CardTypes, useAsDefault: true },
-  { path: '/confirmation', name: 'Confirmation', component: Confirmation },
-  { path: '/personalDetails', name: 'PersonalDetails', component: PersonalDetails }
+  { path: '/personalDetails', name: 'PersonalDetails', component: PersonalDetails },
+  { path: '/confirmation', name: 'Confirmation', component: Confirmation }
 ])
 
 export class NewRequetComponent implements OnInit {
-
-  constructor() {
+  constructor(
+    private newRequestService: NewRequestService
+  ) {
   }
 
   ngOnInit() {
+    this.newRequestService.createNewModel();
   }
 }

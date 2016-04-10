@@ -1,3 +1,22 @@
 <div class="card-types">
-  card-types
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Select credit card type</h1>
+
+      <div class="col-xs-12 col-sm-4 col-md-4 card-holder"
+        (click)="selectCardType('standard')">
+        <img src="assets/cards/standard.jpg"/>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4 card-holder"
+        (click)="selectCardType('gold')">
+        <img src="assets/cards/gold.jpg"/>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4 card-holder"
+        (click)="selectCardType('platinum')">
+        <img src="assets/cards/platinum.jpg"/>
+      </div>
+    </div>
+  </div>
+
 </div>
