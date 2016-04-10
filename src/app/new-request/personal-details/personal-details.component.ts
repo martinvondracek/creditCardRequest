@@ -18,6 +18,10 @@ export class PersonalDetails implements OnInit {
   firstName: AbstractControl;
 
   phoneValidator(control: Control) {
+    if (!control.value) {
+      return {invalidPhone: false};
+    }
+
     if (!control.value.match(/^\+421/)) {
       return {invalidPhone: true};
     }
@@ -46,6 +50,14 @@ export class PersonalDetails implements OnInit {
     if (this.model.status < 1) {
       this.router.navigate( ['CardTypes']);
     }
+  }
+
+  back() {
+    // save data
+    this.newRequestService.saveModel(this.model);
+
+    // go to next page
+    this.router.navigate( ['CardTypes']);
   }
 
   onSubmit(valid: boolean) {

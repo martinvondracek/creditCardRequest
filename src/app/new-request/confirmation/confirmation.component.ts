@@ -12,6 +12,8 @@ import {NewRequestService} from '../new-request.service';
 })
 export class Confirmation implements OnInit {
   model: RequestModel;
+  successfullySent: boolean = false;
+  sendError: boolean = false;
 
   constructor(
     private router: Router,
@@ -26,6 +28,22 @@ export class Confirmation implements OnInit {
     if (this.model.status < 2) {
       this.router.navigate( ['PersonalDetails']);
     }
+  }
+
+  send() {
+    this.newRequestService.sendRequest(this.model)
+      .then(data => {
+        this.successfullySent = true;
+      }, error => {
+        this.sendError = true;
+        setTimeout(() => {
+          this.sendError = false;
+        }, 3000);
+      });
+  }
+
+  back () {
+
   }
 
 }

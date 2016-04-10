@@ -26,17 +26,25 @@
         <div class="form-group col-sm-6">
           <label for="email">Email</label>
           <input type="email" class="form-control" #email="ngForm"
-            placeholder="Email" [ngFormControl]="myForm.controls['email']">
+            placeholder="Email" [ngFormControl]="myForm.controls['email']"
+            [(ngModel)]="model.personalDetails.email">
         </div>
 
         <div class="form-group col-sm-6">
           <label for="phone">Phone</label>
           <input type="phone" class="form-control" #phone="ngForm"
-            placeholder="Phone" [ngFormControl]="myForm.controls['phone']">
+            placeholder="Phone" [ngFormControl]="myForm.controls['phone']"
+            [(ngModel)]="model.personalDetails.phone">
         </div>
 
-        <button type="submit" class="btn btn-default"
-          [disabled]="!myForm.valid">Continue to next step</button>
+        <div class="col-md-12">
+          <button type="button" class="btn btn-default"
+            (click)="back()">Back</button>
+
+          <button type="submit" class="btn btn-default"
+            [disabled]="!myForm.valid">Continue to next step</button>
+        </div>
+
       </form>
     </div>
   </div>
