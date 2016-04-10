@@ -12,3 +12,6 @@ npm install
 # start the server
 npm start <br>
 and go to http://localhost:3000/
+
+# build
+npm run build:prod
