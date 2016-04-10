@@ -1,6 +1,17 @@
+$screen-sm-min: 768px;
+
 .header-component {
   nav {
     background-color: lightgray;
+    .navbar-brand {
+      display: none;
+    }
+
+    @media(min-width: $screen-sm-min) {
+      .navbar-brand {
+        display: block;
+      }
+    }
 
     .nav-item {
       &.router-link-active {

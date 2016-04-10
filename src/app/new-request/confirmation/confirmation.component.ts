@@ -43,7 +43,7 @@ export class Confirmation implements OnInit {
   }
 
   back () {
-
+    this.router.navigate( ['PersonalDetails']);
   }
 
 }
