@@ -6,8 +6,10 @@ export interface RequestModel {
   personalDetails: {
     firstName?: string;
     lastName?: string;
-    maritalStatus?: string;
+    email?: string;
+    phone?: string;
     birthDate?: Date;
+    maritalStatus?: string;
     street?: string;
     zipCode?: string;
     city?: string;
